@@ -11,10 +11,16 @@
 2. Type `git init` to initialize git into that folder
 3. Type `ls -a` to view all files and folders, including hidden ones. You should be able to see `.git` folder if successfully initialized
 
+## End of line
+
+1. On windows new lines are appended with \r\n, on linux it is only \n
+2. On windows, type `git config --global core.autocrlf true`. This will remove the carriage return(CR), `\n` when checking in code to the repo. Then when checking out code, it will auto add the CR.
+3. On Mac, type `git config --global core.autocrlf input`. This will ensure that any input from mac should not consist of CR if it was accidentally added.
+
 ## Integration with vscode
 
 1. In vscode, open command palette, type in `shell code`. Select `Shell command: Install 'code' command in PATH`. This will allow you to open vscode from cli by typing `code`
-2. In cli, type `git config --global core.editor "code --wait"`. This will setup vscode to open as the default editor when using the `-e` arugument. The `--wait` argument will cause the terminal to wait until the file is closed before returning to terminal input.
+2. In cli, type `git config --global core.editor "code --wait"`. This will setup vscode to open as the default editor when using the `-e` arugument. The `--wait` flag will cause the terminal to wait until the file is closed before returning to terminal input.
 3. You can now edit using vscode by typing `git config --global -e`
 
 ## Diff tool using vscode
